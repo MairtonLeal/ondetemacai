@@ -2,14 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-    apiKey: 'AIzaSyB7f5NPqFjNu7MWWtVQf5KxHrT9v5bs0UU',
-    authDomain: 'ionic-projetos.firebaseapp.com',
-    databaseURL: 'https://ionic-projetos-default-rtdb.firebaseio.com',
-    projectId: 'ionic-projetos',
-    storageBucket: 'ionic-projetos.appspot.com',
-    messagingSenderId: '652513321041',
-    appId: '1:652513321041:web:0073a845f2994e55989870',
-    measurementId: 'G-5N0R5HD50Q',
+     apiKey: process.env.FIREBASE_API_KEY,
+  authDomain: process.env.FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.FIREBASE_PROJECT_ID,
+  storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
