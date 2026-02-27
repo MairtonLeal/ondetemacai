@@ -4,5 +4,5 @@ export const COLORS = {
   white: '#FFFFFF',
   text: '#4B4B4B',
   grey: '#C4C4C4',
-  remove: '#222'
+  remove: '#222222'
 };
