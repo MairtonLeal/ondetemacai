@@ -185,7 +185,7 @@ const handleSearchPress = () => {
   );
 }
 
-//   { nome: "Açaí do Gaia", endereco: "Avenida Conselheiro Furtado, 3105", bairro: "Batista Campos", licenciado: true },
+
 //   { nome: "Açaí K", endereco: "Avenida Serzedelo Correa, 305", bairro: "Batista Campos", licenciado: true },
 //   { nome: "Açaí do Batista", endereco: "Rua Serzedelo Correa, 861", bairro: "Batista Campos", licenciado: true },
 //   { nome: "Ivaneide Wanzeler dos Santos", endereco: "Passagem Mirandinha, 157", bairro: "Barreiro", licenciado: true },
