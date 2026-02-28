@@ -21,8 +21,8 @@ export default function HomeScreen() {
 
   const handleOpenMaps = (item: Local) => {
     const enderecoCompleto = `${item.nome}, ${item.endereco}, ${item.bairro}`;
+    // Aplicamos a propriedade que assegura caracteres especiais para url de redirecionamento do maps, ideal para endereços
     const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(enderecoCompleto)}`;
-
     Linking.openURL(mapsUrl)
       .catch(err => console.error('Erro ao abrir o Google Maps:', err));
   };
@@ -57,12 +57,12 @@ export default function HomeScreen() {
       setLoading(false);
     }
   };
-
-  useFocusEffect(
+    //useFocusEffect - Atualiza a lista Automaticamente recarregar ao acessar a tela
+    useFocusEffect(
+    //Evita Recriar Funcao e executar de modo redundante
     useCallback(() => {
       let isActive = true;
       load();
-
       return () => {
         isActive = false; // cancela atualização se sair da tela durante a requisição
       };
@@ -78,7 +78,6 @@ export default function HomeScreen() {
 
 const handleSearchPress = () => {
   const text = search.trim();
-
   if (!text) {
     // Se vazio, mostra todos
     setFilteredLocais(locais);
@@ -132,15 +131,16 @@ const handleSearchPress = () => {
         <MaterialIcons name="search" size={24} color={COLORS.grey} />
         </TouchableOpacity>
       </View>
+      {/* Componente que renderiza listas grandes (Otimo em performace) */}
       <FlatList
         data={filteredLocais}
+        // Para cada item precisa de chave unica
         keyExtractor={(item) => item.id!}
         renderItem={({ item }) => (
           <AcaiCard local={item}
             onPressMap={() => handleOpenMaps(item)}
             onPressShare={() => handleShare(item)}
             onPressOptions={() => handleDetails(item)}
-
           />
         )}
         contentContainerStyle={[
@@ -184,4 +184,3 @@ const handleSearchPress = () => {
     </View>
   );
 }
-

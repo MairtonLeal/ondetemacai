@@ -81,11 +81,13 @@ const CreateLocalSreen = () => {
           style={styles.headerTitle}>Novo Local</Text>
         <View style={{ width: 28 }} />
       </View>
+      {/* Mantém o campo visive dentro da exibição do teclado nas plataformas */}
       <KeyboardAvoidingView
         style={styles.container}
         behavior={Platform.OS === "ios" ? "padding" : "height"}
         accessible={false} // o container principal não precisa ser lido
-        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}>
+      // Ajuste fino no container
+      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}>
         <ScrollView
           contentContainerStyle={styles.scrollContainer}
           keyboardShouldPersistTaps="handled">

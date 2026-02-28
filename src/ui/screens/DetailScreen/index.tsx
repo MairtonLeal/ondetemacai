@@ -97,7 +97,7 @@ export default function LocalDetailsScreen() {
               await repository.update(updatedLocal);
 
               Alert.alert("Sucesso", "Local atualizado com sucesso!");
-              handleCloseModal();
+              backScreen();
             } catch (error) {
               console.error(error);
               Alert.alert("Erro", "Não foi possível atualizar o local.");

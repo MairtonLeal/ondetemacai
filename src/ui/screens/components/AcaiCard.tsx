@@ -12,7 +12,6 @@ interface Props {
   onPressOptions?: () => void;
 }
 
-const { width } = Dimensions.get('window');
 
 export const AcaiCard: React.FC<Props> = ({ local,
   onPressMap, onPressShare, onPressOptions }) => {
